@@ -1,23 +1,19 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-function render($view) {
-    include __DIR__ . "/views/layout.php";
+if ($uri === '/') {
+    require __DIR__ . '/views/home.php';
 }
-
-switch ($uri) {
-    case '/':
-        $page = 'home';
-        break;
-    case '/producten':
-        $page = 'producten';
-        break;
-    default:
-        if (preg_match('#^/product/(.*)$#', $uri, $m)) {
-            $_GET['slug'] = $m[1];
-            $page = 'product';
-        } else {
-            $page = 'home';
-        }
+elseif ($uri === '/producten') {
+    require __DIR__ . '/views/producten.php';
 }
-include __DIR__ . "/views/$page.php";
+elseif (preg_match('#^/product/(.*)$#', $uri, $match)) {
+    $_GET['slug'] = $match[1];
+    require __DIR__ . '/views/product.php';
+}
+else {
+    echo "404";
+}

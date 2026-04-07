@@ -1,0 +1,1 @@
+<?php define('DATA_PATH', __DIR__.'/../../data/products.json');

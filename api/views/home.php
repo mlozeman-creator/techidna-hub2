@@ -1,18 +1,16 @@
 <?php ob_start(); ?>
 
 <div class="hero">
-<h1>Premium Tech Essentials</h1>
-<p>Focus, kwaliteit en vertrouwen.</p>
-<a href="/producten" class="btn">Bekijk assortiment</a>
-</div>
-
 <div class="container">
-<h2>Waarom Techidna?</h2>
-<ul>
-<li>✔ Premium kwaliteit</li>
-<li>✔ Levering via bol.com</li>
-<li>✔ Modern design</li>
-</ul>
+<h1 class="display-4 fw-bold">Premium Tech Essentials</h1>
+<p class="lead">Focus, kwaliteit en vertrouwen.</p>
+<a href="/producten" class="btn btn-tech">Bekijk assortiment</a>
+</div>
 </div>
 
-<?php $content=ob_get_clean(); require 'layout.php'; ?>
+<div class="container py-5 text-center">
+<h3>Waarom Techidna?</h3>
+<p class="text-muted">Premium kwaliteit • levering via bol.com • modern design</p>
+</div>
+
+<?php $content = ob_get_clean(); ?>

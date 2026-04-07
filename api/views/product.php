@@ -1,16 +1,17 @@
 <?php
 require_once __DIR__.'/../services/ProductService.php';
-$p=getProductBySlug($_GET['slug']);
-if(!$p){echo"Product niet gevonden";exit;}
+$p = getProduct($_GET['slug']);
+if(!$p){ echo "Niet gevonden"; exit; }
+
 ob_start();
 ?>
 
-<div class="container">
+<div class="container py-5 text-center">
 <h1><?= $p['title'] ?></h1>
-<img src="<?= $p['image'] ?>">
-<p><?= $p['description'] ?></p>
-<p><strong>€ <?= number_format($p['price'],2,',','.') ?></strong></p>
-<a href="<?= $p['url'] ?>" class="btn" target="_blank">Bekijk op bol.com</a>
+<img src="<?= $p['image'] ?>" style="max-width:300px;">
+<p class="mt-4"><?= $p['description'] ?></p>
+<h3>€ <?= number_format($p['price'],2,',','.') ?></h3>
+<a href="<?= $p['url'] ?>" class="btn btn-tech mt-3">Bekijk op bol.com</a>
 </div>
 
-<?php $content=ob_get_clean(); require 'layout.php'; ?>
+<?php $content = ob_get_clean(); ?>

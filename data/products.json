@@ -1,0 +1,12 @@
+{
+ "products":[
+  {
+   "slug":"kapton-tape-3mm",
+   "title":"Kapton Tape 3mm",
+   "price":4.99,
+   "image":"https://media.s-bol.com/RNO2Zw2X5wJw/wjNr35J/550x550.jpg",
+   "description":"Hittebestendige tape voor elektronica en 3D printen.",
+   "url":"https://example.com"
+  }
+ ]
+}
